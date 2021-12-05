@@ -13,6 +13,8 @@ module "ec2" {
   associate_public_ip_address = true
   monitoring                  = var.detailed_monitoring
 
+  user_data  = data.template_file.userdata.rendered
+
   tags = local.tags
 }
 
