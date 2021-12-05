@@ -1,0 +1,13 @@
+{
+  "metrics": {
+    "metrics_collected": {
+      "netstat": {
+        "measurement": [
+          "tcp_established",
+          "tcp_time_wait"
+        ],
+        "metrics_collection_interval": 60
+      },
+    }
+  }
+}

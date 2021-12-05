@@ -1,0 +1,12 @@
+{
+  "metrics": {
+    "metrics_collected": {
+      "swap": {
+        "measurement": [
+          "swap_used_percent"
+        ],
+        "metrics_collection_interval": 60
+      }
+    }
+  }
+}
