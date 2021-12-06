@@ -3,7 +3,7 @@ name  = "jenkins"
 owner = "dj.kim"
 tags  = {}
 
-jenkins_key = "dev/apne2/ec2/jenkins/terraform.tfstate"
+target_key = "dev/apne2/ec2/dmz_app01/terraform.tfstate"
 
 # sg
 http_sg_description      = "HTTP Security group for Bastion EC2 instance"

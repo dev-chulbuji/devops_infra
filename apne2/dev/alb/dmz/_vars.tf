@@ -2,7 +2,7 @@ variable "env" {}
 variable "name" {}
 variable "owner" {}
 
-variable "jenkins_key" {}
+variable "target_key" {}
 
 # sg
 variable "http_sg_description" {}

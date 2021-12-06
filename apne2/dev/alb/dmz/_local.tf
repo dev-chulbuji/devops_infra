@@ -13,7 +13,7 @@ locals {
   private_subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnet_ids
   azs                = data.terraform_remote_state.vpc.outputs.azs
   default_sg_id      = data.terraform_remote_state.vpc.outputs.default_security_group_id
-  jenkins_id         = data.terraform_remote_state.jenkins.outputs.id
+  target_id         = data.terraform_remote_state.target.outputs.id
 
   # sg
   http_sg_description      = var.http_sg_description
@@ -32,7 +32,7 @@ locals {
       target_type      = var.target_type
       targets = {
         jenkins = {
-          target_id = local.jenkins_id
+          target_id = local.target_id
           port      = var.backend_port
         }
       }
