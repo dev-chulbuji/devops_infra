@@ -1,0 +1,16 @@
+{
+    "messageType": "DATA_MESSAGE",
+    "owner": "657976307134",
+    "logGroup": "/aws/ec2/var/log/messages",
+    "logStream": "i-0f1140bdb03a68cdd",
+    "subscriptionFilters": [
+        "oom_filter"
+    ],
+    "logEvents": [
+        {
+            "id": "36557858096384906632327546006764917925043108742648692736",
+            "timestamp": 1639311053103,
+            "message": "oom"
+        }
+    ]
+}

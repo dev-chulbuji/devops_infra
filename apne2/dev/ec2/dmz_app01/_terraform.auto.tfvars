@@ -1,5 +1,5 @@
 env   = "dev"
-name  = "dmz-app01"
+name  = "dmz-target-app01"
 owner = "dj.kim"
 tags  = {}
 
@@ -26,6 +26,10 @@ ssh_egress_rules        = ["all-all"]
 # iam
 trusted_role_services = ["ec2.amazonaws.com"]
 custom_role_policy_arns = [
-  "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+  "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
+  "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess",
 ]
 
+# workload
+docker_image_name = "demo"
+docker_image_tag = "1.2.3"

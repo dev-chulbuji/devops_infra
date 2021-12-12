@@ -15,3 +15,6 @@ variable "ssh_egress_rules" {}
 
 variable "trusted_role_services" {}
 variable "custom_role_policy_arns" {}
+
+variable "docker_image_name" {}
+variable "docker_image_tag" {}

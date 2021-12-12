@@ -16,7 +16,7 @@ ami_filters = [
 instance_type = "t3.micro"
 key_name      = "dev"
 
-target_count = 3
+target_count = 1
 #private_ips  = ["10.0.1.61"]
 private_ips  = ["10.0.1.61", "10.0.3.61", "10.0.1.62"]
 
