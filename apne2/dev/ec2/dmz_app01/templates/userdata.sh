@@ -18,10 +18,9 @@ sudo amazon-cloudwatch-agent-ctl \
 # check agent status
 amazon-cloudwatch-agent-ctl -m ec2 -a status
 
+# docker
 sudo yum update
 sudo yum install -y docker git
-
-# docker
 systemctl enable docker
 systemctl start docker
 sudo usermod -aG docker ec2-user

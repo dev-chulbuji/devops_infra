@@ -13,8 +13,8 @@ module "lambda" {
 
 resource "aws_lambda_permission" "this" {
   statement_id  = "AllowExecutionFromCloudWatch"
+  principal     = "logs.${var.region}.amazonaws.com"
   action        = "lambda:InvokeFunction"
   function_name = module.lambda.function_name
-  principal     = "logs.${var.region}.amazonaws.com"
   source_arn    = "arn:aws:events:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:${var.log_group_name}:*"
 }

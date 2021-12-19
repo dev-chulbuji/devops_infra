@@ -1,8 +1,8 @@
-var zlib = require('zlib');
+const zlib = require('zlib');
 
-exports.handler = function(input, context) {
-    var payload = Buffer.from(input.awslogs.data, 'base64');
-    zlib.gunzip(payload, function(e, result) {
+exports.handler = (input, context) => {
+    const payload = Buffer.from(input.awslogs.data, 'base64');
+    zlib.gunzip(payload, (e, result) => {
         if (e) { 
             context.fail(e);
         } else {

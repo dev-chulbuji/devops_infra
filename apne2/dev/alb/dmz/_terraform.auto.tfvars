@@ -1,5 +1,5 @@
 env   = "dev"
-name  = "jenkins"
+name  = "dmz-app"
 owner = "dj.kim"
 tags  = {}
 
@@ -40,4 +40,4 @@ http_tcp_listener_rules = [
 target_type      = "instance"
 backend_protocol = "HTTP"
 backend_port     = 8080
-health_check_url = "/login"
+health_check_url = "/hello"

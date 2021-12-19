@@ -111,7 +111,7 @@ def alb_read_and_convert(number, line, outputformat):
       'client_ip': fields[3],
       'client_port': int(fields[4]),
       'target_ip': fields[5],
-      'target_port': int(fields[6]),
+      'target_port': int(fields[6]) if fields[6] != '' else -1,
       'request_processing_time': float(fields[7]),
       'target_processing_time': float(fields[8]),
       'response_processing_time': float(fields[9]),
