@@ -14,3 +14,4 @@ variable "worker_key_name" {}
 variable "trusted_role_services" {}
 variable "custom_role_policy_arns" {}
 variable "additional_policy_actions" {}
+variable "enable_irsa" {}

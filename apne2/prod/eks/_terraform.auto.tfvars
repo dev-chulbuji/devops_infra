@@ -12,6 +12,8 @@ worker_instance_count = 3
 worker_instance_public_ip = true
 worker_key_name = "prod"
 
+enable_irsa = true
+
 trusted_role_services = ["ec2.amazonaws.com"]
 custom_role_policy_arns = [
   "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",

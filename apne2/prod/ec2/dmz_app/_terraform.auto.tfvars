@@ -1,5 +1,5 @@
 env   = "prod"
-name  = "dmz-app"
+name  = "dmz-app-prod"
 owner = "dj.kim"
 tags  = {}
 
@@ -13,7 +13,7 @@ ami_filters = [
 ]
 
 # EC2
-app_count           = 2
+app_count           = 1
 instance_type       = "t3.micro"
 key_name            = "prod"
 detailed_monitoring = true
