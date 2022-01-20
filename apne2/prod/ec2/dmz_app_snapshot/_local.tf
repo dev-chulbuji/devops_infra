@@ -16,14 +16,16 @@ locals {
   default_sg_id     = data.terraform_remote_state.vpc.outputs.default_security_group_id
 
   random_num = random_integer.this.result
-  az = element(local.azs, local.random_num)
-  subnet = element(local.public_subnet_ids, local.random_num)
+  az         = element(local.azs, local.random_num)
+  subnet     = element(local.public_subnet_ids, local.random_num)
 
-  ami_id        = data.aws_ami.this.id
-  ami_owners    = var.ami_owners
-  ami_filters   = var.ami_filters
-  instance_type = var.instance_type
-  key_name      = var.key_name
+  ami_id               = data.aws_ami.this.id
+  ami_owners           = var.ami_owners
+  ami_filters          = var.ami_filters
+  ebs_snapshot_owners  = var.ebs_snapshot_owners
+  ebs_snapshot_filters = var.ebs_snapshot_filters
+  instance_type        = var.instance_type
+  key_name             = var.key_name
 
   ssh_sg_description      = var.ssh_sg_description
   ssh_ingress_cidr_blocks = var.ssh_ingress_cidr_blocks

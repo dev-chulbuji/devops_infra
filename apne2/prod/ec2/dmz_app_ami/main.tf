@@ -22,20 +22,20 @@ module "ec2" {
   tags                        = merge(local.tags, var.ec2_tags)
 }
 
-resource "aws_volume_attachment" "this" {
-  count       = length(local.target_names)
-  device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.this[count.index].id
-  instance_id = module.ec2[count.index].id
-}
-
-resource "aws_ebs_volume" "this" {
-  count             = length(local.target_names)
-  availability_zone = local.az
-  type              = var.ebs_volume_type
-  size              = var.ebs_volume_size
-  tags              = merge(local.tags, { Name = local.target_ebs_names[count.index] })
-}
+#resource "aws_volume_attachment" "this" {
+#  count       = length(local.target_names)
+#  device_name = "/dev/sdh"
+#  volume_id   = aws_ebs_volume.this[count.index].id
+#  instance_id = module.ec2[count.index].id
+#}
+#
+#resource "aws_ebs_volume" "this" {
+#  count             = length(local.target_names)
+#  type              = "gp3"
+#  availability_zone = local.az
+#  size              = 10
+#  tags              = merge(local.tags, { Name = local.target_ebs_names[count.index] })
+#}
 
 module "ssh" {
   source  = "terraform-aws-modules/security-group/aws"

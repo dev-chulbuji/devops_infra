@@ -5,6 +5,8 @@ variable "owner" {}
 variable "app_count" {}
 variable "ami_owners" {}
 variable "ami_filters" {}
+variable "ebs_snapshot_owners" {}
+variable "ebs_snapshot_filters" {}
 variable "instance_type" {}
 variable "key_name" {}
 variable "detailed_monitoring" {}
@@ -17,6 +19,3 @@ variable "ssh_egress_rules" {}
 
 variable "trusted_role_services" {}
 variable "custom_role_policy_arns" {}
-
-variable "ebs_volume_size" {}
-variable "ebs_volume_type" {}

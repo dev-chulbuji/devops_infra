@@ -25,16 +25,14 @@ module "ec2" {
 resource "aws_volume_attachment" "this" {
   count       = length(local.target_names)
   device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.this[count.index].id
+  volume_id   = aws_ebs_volume.this.id
   instance_id = module.ec2[count.index].id
 }
 
 resource "aws_ebs_volume" "this" {
-  count             = length(local.target_names)
   availability_zone = local.az
-  type              = var.ebs_volume_type
-  size              = var.ebs_volume_size
-  tags              = merge(local.tags, { Name = local.target_ebs_names[count.index] })
+  snapshot_id       = data.aws_ebs_snapshot.this.id
+  tags              = merge(local.tags, { Name = local.target_ebs_names[0] })
 }
 
 module "ssh" {

@@ -1,14 +1,14 @@
 env   = "prod"
-name  = "dmz-app-prod"
+name  = "dmz-app-prod-ami"
 owner = "dj.kim"
 tags  = {}
 
 # AMI
-ami_owners = ["amazon"]
+ami_owners = ["self"]
 ami_filters = [
   {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+    values = ["devops_ami_01"]
   }
 ]
 
@@ -18,10 +18,6 @@ instance_type       = "t3.micro"
 key_name            = "prod"
 detailed_monitoring = true
 ec2_tags            = { monitoring : true }
-
-# EBS
-ebs_volume_size = 10
-ebs_volume_type = "gp3"
 
 # ssh sg
 ssh_sg_description      = "SSH Security group for Bastion EC2 instance"

@@ -1,5 +1,5 @@
 env   = "prod"
-name  = "dmz-app-prod"
+name  = "dmz-app-prod-snapshot"
 owner = "dj.kim"
 tags  = {}
 
@@ -12,16 +12,20 @@ ami_filters = [
   }
 ]
 
+ebs_snapshot_owners = ["self"]
+ebs_snapshot_filters = [
+  {
+    name   = "tag:Name"
+    values = ["devops_snapshot_01"]
+  }
+]
+
 # EC2
 app_count           = 1
 instance_type       = "t3.micro"
 key_name            = "prod"
 detailed_monitoring = true
 ec2_tags            = { monitoring : true }
-
-# EBS
-ebs_volume_size = 10
-ebs_volume_type = "gp3"
 
 # ssh sg
 ssh_sg_description      = "SSH Security group for Bastion EC2 instance"

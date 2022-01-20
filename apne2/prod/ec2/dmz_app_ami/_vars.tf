@@ -17,6 +17,3 @@ variable "ssh_egress_rules" {}
 
 variable "trusted_role_services" {}
 variable "custom_role_policy_arns" {}
-
-variable "ebs_volume_size" {}
-variable "ebs_volume_type" {}
