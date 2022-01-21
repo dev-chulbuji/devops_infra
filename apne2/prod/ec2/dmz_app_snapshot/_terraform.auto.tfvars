@@ -16,7 +16,7 @@ ebs_snapshot_owners = ["self"]
 ebs_snapshot_filters = [
   {
     name   = "tag:Name"
-    values = ["devops_snapshot_01"]
+    values = ["devops-snapshot-01"]
   }
 ]
 

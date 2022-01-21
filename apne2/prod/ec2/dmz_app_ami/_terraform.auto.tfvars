@@ -8,7 +8,7 @@ ami_owners = ["self"]
 ami_filters = [
   {
     name   = "name"
-    values = ["devops_ami_01"]
+    values = ["devops-ami-01"]
   }
 ]
 
